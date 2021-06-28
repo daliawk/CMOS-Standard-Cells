@@ -1,0 +1,45 @@
+# header information:
+HProject1|9.07
+
+# Views:
+Vlayout|lay
+
+# Tools:
+Ouser|DefaultTechnology()Sartwork|SoftTechnologies()S/home/user/proj/wcc-electric/lib/tech/st65/st_old65.xml;/home/user/proj/wcc-electric/lib/tech/lf150/lf150.xml;/home/user/proj/wcc-electric/lib/tech/tsmc40/tsmcSun40GP.xml;/home/user/proj/wcc-electric/lib/tech/tsmc180/tsmc180.xml;/home/user/proj/wcc-electric/lib/tech/umc65/umc65.xml;/home/user/proj/wcc-electric/lib/tech/tsmc40/tsmc40.xml;/home/user/proj/wcc-electric/lib/tech/gf28/gf28.xml;/home/user/proj/wcc-electric/lib/tech/pcboard_inches/pcboard_inches.xml;/home/user/proj/wcc-electric/lib/tech/pcboard/pcboard.xml;/home/user/proj/wcc-electric/lib/tech/lf150a/lf150a.xml;/home/user/proj/wcc-electric/lib/tech/umc180/umc180.xml;/home/user/proj/wcc-electric/lib/tech/tsmc28/tsmc28.xml;/home/user/proj/wcc-electric/lib/tech/skywater/skywater130.xml
+Oio|GDSCellNameLenMax()I3000|GDSDefaultTextLayer()I0|GDSOutputConvertsBracketsInExports()BF|GDSOutputWriteExportCharacteristics()BF|GDSWritesExportPins()BT
+
+# Technologies:
+Tmocmos|MoCMOSAlternateActivePolyRules()BT|ScaleFORmocmos()D70.0|SelectedFoundryFormocmos()STSMC|mocmosSecondPolysilicon()BF
+
+# Cell INV_1;1{lay}
+CINV_1;1{lay}||mocmos|1624807068044|1624881424411||DRC_last_good_drc_area_date()G1624881390491
+NMetal-1-P-Well-Con|GND|D5G1;|0|8|12|||
+NMetal-1-Pin|Out|D5G1;|10|24||||
+NMetal-1-N-Well-Con|VDD|D5G1;|0|42.5|12|||
+Ngeneric:Facet-Center|art@0||0|0||||AV
+NMetal-1-P-Active-Con|contact@0||4|33||3||
+NMetal-1-P-Active-Con|contact@1||-4|33||3||
+NMetal-1-N-Active-Con|contact@2||-4|16||||
+NMetal-1-N-Active-Con|contact@3||4|16||||
+NMetal-1-Polysilicon-1-Con|contact@4||-3|24||||
+NN-Transistor|nmos|D5G1;|0|16|||R|
+NPolysilicon-1-Pin|pin@0||0|24||||
+NMetal-1-Pin|pin@2||4|24||||
+NP-Transistor|pmos|D5G1;|0|33|4||R|
+AP-Active|net@1|||S1800|pmos|diff-bottom|3.75|33|contact@0||4|33
+AP-Active|net@2|||S1800|contact@1||-4|33|pmos|diff-top|-3.75|33
+AN-Active|net@3|||S1800|contact@2||-4|16|nmos|diff-top|-3.75|16
+AN-Active|net@4|||S0|contact@3||4|16|nmos|diff-bottom|3.75|16
+AMetal-1|net@5||1|S2700|contact@1||-4|33|VDD||-4|42.5
+AMetal-1|net@7||1|S900|contact@2||-4|16|GND||-4|8
+APolysilicon-1|net@8|||S2700|nmos|poly-right|0|19.5|pin@0||0|24
+APolysilicon-1|net@9|||S2700|pin@0||0|24|pmos|poly-left|0|27.5
+APolysilicon-1|net@10|||S1800|contact@4||-3|24|pin@0||0|24
+AMetal-1|net@11||1|S900|contact@0||4|33|pin@2||4|24
+AMetal-1|net@12||1|S900|pin@2||4|24|contact@3||4|16
+AMetal-1|net@13|||S0|Out||10|24|pin@2||4|24
+EGND||D5G2;|GND||U
+EIn||D5G2;|contact@4||U
+EOut||D5G2;|Out||U
+EVDD||D5G2;|VDD||U
+X
