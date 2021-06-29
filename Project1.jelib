@@ -12,7 +12,7 @@ Oio|GDSCellNameLenMax()I3000|GDSDefaultTextLayer()I0|GDSOutputConvertsBracketsIn
 Tmocmos|MoCMOSAlternateActivePolyRules()BT|ScaleFORmocmos()D70.0|SelectedFoundryFormocmos()STSMC|mocmosSecondPolysilicon()BF
 
 # Cell COMPLEX_1;1{lay}
-CCOMPLEX_1;1{lay}||mocmos|1624908323037|1624999209081||DRC_last_good_drc_area_date()G1624999215034|DRC_last_good_drc_bit()I18|DRC_last_good_drc_date()G1624999215034
+CCOMPLEX_1;1{lay}||mocmos|1624908323037|1625000493938||DRC_last_good_drc_area_date()G1625000500983|DRC_last_good_drc_bit()I18|DRC_last_good_drc_date()G1625000500983
 NMetal-1-P-Well-Con|GND|D5G1;|12.5|-39|41|||
 NMetal-1-N-Well-Con|VDD|D5G1;|12.5|25|41|||
 Ngeneric:Facet-Center|art@0||0|0||||AV
@@ -116,12 +116,20 @@ APolysilicon-1|net@68|||S2700|pin@19||-7|-23|contact@4||-7|-8
 APolysilicon-1|net@69|||S900|pmos|poly-left|-2|3|pin@20||-2|1
 APolysilicon-1|net@70|||S0|pin@20||-2|1|pin@21||-7|1
 APolysilicon-1|net@71|||S900|pin@21||-7|1|contact@4||-7|-8
+EGND||D5G2;|GND||U
+EIN1||D5G2;|contact@11||U
+EIN2||D5G2;|contact@4||U
+EIN3||D5G2;|contact@12||U
+EIN4||D5G2;|contact@13||U
+EIN5||D5G2;|contact@14||U
+EOUT||D5G2;|pin@5||U
+EVDD||D5G2;|VDD||U
 X
 
 # Cell INV_1;1{lay}
-CINV_1;1{lay}||mocmos|1624807068044|1624998127262||DRC_last_good_drc_area_date()G1624998135041|DRC_last_good_drc_bit()I18|DRC_last_good_drc_date()G1624998135041
+CINV_1;1{lay}||mocmos|1624807068044|1624999411189||DRC_last_good_drc_area_date()G1624999449796|DRC_last_good_drc_bit()I18|DRC_last_good_drc_date()G1624999449796
 NMetal-1-P-Well-Con|GND|D5G1;|0|-21|12|||
-NMetal-1-Pin|Out|D5G1;|10|12||||
+NMetal-1-Pin|Out|D5G1;|7|12||||
 NMetal-1-N-Well-Con|VDD|D5G1;|0|43|12|||
 Ngeneric:Facet-Center|art@0||0|0||||AV
 NMetal-1-P-Active-Con|contact@0||4|31||3||
@@ -143,7 +151,7 @@ APolysilicon-1|net@9|||S2700|pin@0||0|12|pmos|poly-left|0|25.5
 APolysilicon-1|net@10|||S1800|contact@4||-3|12|pin@0||0|12
 AMetal-1|net@11||1|S900|contact@0||4|33|pin@2||4|12
 AMetal-1|net@12||1|S900|pin@2||4|12|contact@3||4|-8.4
-AMetal-1|net@13|||S0|Out||10|12|pin@2||4|12
+AMetal-1|net@13|||S0|Out||7|12|pin@2||4|12
 AMetal-1|net@14||1|S2700|contact@1||-4|33|VDD||-4|43
 EGND||D5G2;|GND||U
 EIn||D5G2;|contact@4||U
