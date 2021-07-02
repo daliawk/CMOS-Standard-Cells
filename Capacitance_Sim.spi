@@ -1,0 +1,29 @@
+*** SPICE deck for cell Capacitance_Sim{sch} from library Project1
+*** Created on Fri Jul 02, 2021 11:14:54
+*** Last revised on Fri Jul 02, 2021 11:24:33
+*** Written on Fri Jul 02, 2021 11:24:42 by Electric VLSI Design System, version 9.07
+*** Layout tech: mocmos, foundry MOSIS
+*** UC SPICE *** , MIN_RESIST 4.0, MIN_CAPAC 0.1FF
+
+.global gnd vdd
+
+*** TOP LEVEL CELL: Capacitance_Sim{sch}
+Mnmos OUT net@9 gnd gnd N L=0.14U W=0.21U
+Mpmos vdd net@9 OUT vdd P L=0.14U W=0.49U
+Rres@0 net@9 IN 20k
+
+* Spice Code nodes in cell cell 'Capacitance_Sim{sch}'
+vin IN gnd (pulse 0 1.8 0.000001us 0.000001us 0.000001us 10us)
+.ic v(OUT) 1.8
+.tran 0ps 3000ps
+.meas TRAN tpdf TRIG V(IN) val=0.9 rise=1 TARG V(OUT) val=0.9 fall=1
+.meas TRAN tpdr TRIG V(IN) val=0.9 fall=1 TARG V(OUT) val=0.9 rise=1
+.include /home/daliawk/DD2_Project1/130nm_bulk.pm
+.control
+run
+set color0=white
+set color1=black
+set xbrushwidth=2
+plot v(IN) v(OUT)
+.endc
+.END
