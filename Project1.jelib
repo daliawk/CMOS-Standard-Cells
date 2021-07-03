@@ -873,18 +873,18 @@ EVDD||D5G2;|pwr@0||U
 X
 
 # Cell INV_1_sim;1{sch}
-CINV_1_sim;1{sch}||schematic|1625302956962|1625305948186|
-IINV_1;1{sch}|INV_1@0||4|-2|||D5G4;X2;Y-6;|SIM_spice_model(D5G1;)SINV_1
+CINV_1_sim;1{sch}||schematic|1625302956962|1625313252081|
+IINV_1;1{sch}|INV_1@0||8|-2|||D5G4;X2;Y-6;|SIM_spice_model(D5G1;Y-7;)SINV_1
 Ngeneric:Facet-Center|art@0||0|0||||AV
-NCapacitor|cap@0||22|-1|||R||SCHEM_capacitance(D5G1;)S2.17f
-NWire_Pin|pin@0||25|-12||||
-NWire_Pin|pin@1||24|-12||||
-Ngeneric:Invisible-Pin|pin@3||-23|-10|||||SIM_spice_card(D5G1;)S[vdd VDD GND dc 1.8,vin IN gnd (pulse 0 1.8 500ps 480ps 480ps 1000ps),.tran 10ps 3000ps,.meas TRAN tpdf TRIG V(IN) val=0.9 rise=1 TARG V(OUT) val=0.9 fall=1,.meas TRAN tpdr TRIG V(IN) val=0.9 fall=1 TARG V(OUT) val=0.9 rise=1,.include /home/nada/Desktop/DD2_Project1/130nm_bulk.pm,.control,run,set color0=white,set color1=black,set xbrushwidth=2,plot v(IN) v(OUT),.endc]
-Awire|net@0|||1800|INV_1@0|OUT|11|-1|cap@0|a|20|-1
-Awire|net@1|||1800|INV_1@0|GND|3|-12|pin@0||25|-12
-Awire|net@2|||0|pin@0||25|-12|pin@1||24|-12
-Awire|net@3|||900|cap@0|b|24|-1|pin@1||24|-12
-EOUT||D5G2;X3;Y1;|INV_1@0|OUT|U
+Ngeneric:Invisible-Pin|pin@3||-23|-19|||||SIM_spice_card(D5G1;)S[vdd VDD GND dc 1.8,vin IN gnd (pulse 0 1.8 500ps 480ps 480ps 1000ps),.tran 0.1 ns 50ns,.meas TRAN tpdf TRIG V(IN) val=0.9 rise=1 TARG V(OUT) val=0.9 fall=1,.meas TRAN tpdr TRIG V(IN) val=0.9 fall=1 TARG V(OUT) val=0.9 rise=1,.cload OUT 0 2.17fF,.include /home/nada/Desktop/DD2_Project1/130nm_bulk.pm,.control,run,set color0=white,set color1=black,set xbrushwidth=2,plot v(IN) v(OUT),.endc]
+NWire_Pin|pin@4||20|-1||||
+NWire_Pin|pin@5||-14|-2||||
+NWire_Pin|pin@6||1|-2||||
+Awire|net@0|||1800|INV_1@0|OUT|15|-1|pin@4||20|-1
+Awire|net@1|||900|INV_1@0|IN|1|-1|pin@6||1|-2
+Awire|net@2|||1800|pin@5||-14|-2|pin@6||1|-2
+EIN||D5G2;|pin@5||U
+EOUT||D5G2;X9;|INV_1@0|OUT|U
 X
 
 # Cell INV_2;1{ic}
