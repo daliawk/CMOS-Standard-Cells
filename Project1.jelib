@@ -769,28 +769,28 @@ EVDD||D5G2;|pwr@0||U
 X
 
 # Cell Capacitance_Sim;1{sch}
-CCapacitance_Sim;1{sch}||schematic|1625249694190|1625250273278|
+CCapacitance_Sim;1{sch}||schematic|1625249694190|1625300961582|
 Ngeneric:Facet-Center|art@0||0|0||||AV
 NOff-Page|conn@0||-12|0||||
 NOff-Page|conn@1||6|0||||
 NGround|gnd@0||0|-13||||
-NTransistor|nmos|D5G1;|-2|-4|||R||ATTR_length(D5G0.5;X-0.5;Y-1;)D2.0|ATTR_width(D5G1;X0.5;Y-1;)D3.0
+NTransistor|nmos@0||-2|-4|||R||ATTR_length(D5G0.5;X-0.5;Y-1;)D2.0|ATTR_width(D5G1;X0.5;Y-1;)D3.0|SIM_spice_model(D5G1;Y-1;)SNMOS
 NWire_Pin|pin@2||0|0||||
 NWire_Pin|pin@3||-5|3||||
 NWire_Pin|pin@4||-5|-4||||
-Ngeneric:Invisible-Pin|pin@5||-8|-13|||||SIM_spice_card(D5G1;)S[vin IN gnd (pulse 0 1.8 0.000001us 0.000001us 0.000001us 10us),.ic v(OUT) 1.8,.tran 0ps 3000ps,.meas TRAN tpdf TRIG V(IN) val=0.9 rise=1 TARG V(OUT) val=0.9 fall=1,.meas TRAN tpdr TRIG V(IN) val=0.9 fall=1 TARG V(OUT) val=0.9 rise=1,.include /home/daliawk/DD2_Project1/130nm_bulk.pm,.control,run,set color0=white,set color1=black,set xbrushwidth=2,plot v(IN) v(OUT),.endc]
-NTransistor|pmos|D5G1;|-2|3|||R|2|ATTR_length(D5G0.5;X-0.5;Y-1;)D2.0|ATTR_width(D5G1;X0.5;Y-1;)D7.0
+Ngeneric:Invisible-Pin|pin@5||0|-17|||||SIM_spice_card(D5G1;)S[vdd vdd gnd dc 1.8,vin In gnd (pulse 0 1.8 0.000001ns 0.000001ns 0.000001ns 10ns),.tran 0.01ns 30.5ns,.include /home/nada/Desktop/DD2_Project1/130nm_bulk.pm,.control,run,set color0=white,set color1=black,set xbrushwidth=2,plot v(in) v(out),.endc]
+NTransistor|pmos@0||-2|3|||R|2|ATTR_length(D5G0.5;X-0.5;Y-1;)D2.0|ATTR_width(D5G1;X0.5;Y-1;)D7.0|SIM_spice_model(D5G1;)SPMOS
 NPower|pwr@0||0|12||||
 NResistor|res@0||-7|0|||||SCHEM_resistance(D5G1;)S20k
-Awire|net@0|||2700|pmos|d|0|5|pwr@0||0|12
-Awire|net@1|||2700|pin@2||0|0|pmos|s|0|1
-Awire|net@2|||2700|gnd@0||0|-11|nmos|s|0|-6
-Awire|net@7|||2700|nmos|d|0|-2|pin@2||0|0
+Awire|net@0|||2700|pmos@0|d|0|5|pwr@0||0|12
+Awire|net@1|||2700|pin@2||0|0|pmos@0|s|0|1
+Awire|net@2|||2700|gnd@0||0|-11|nmos@0|s|0|-6
+Awire|net@7|||2700|nmos@0|d|0|-2|pin@2||0|0
 Awire|net@8|||0|conn@1|a|4|0|pin@2||0|0
 Awire|net@9|||2700|res@0|b|-5|0|pin@3||-5|3
-Awire|net@10|||1800|pin@3||-5|3|pmos|g|-3|3
+Awire|net@10|||1800|pin@3||-5|3|pmos@0|g|-3|3
 Awire|net@11|||900|res@0|b|-5|0|pin@4||-5|-4
-Awire|net@12|||1800|pin@4||-5|-4|nmos|g|-3|-4
+Awire|net@12|||1800|pin@4||-5|-4|nmos@0|g|-3|-4
 Awire|net@13|||1800|conn@0|y|-10|0|res@0|a|-9|0
 EIN||D5G2;|conn@0|a|U
 EOUT||D5G2;|conn@1|y|U
@@ -870,6 +870,13 @@ EGND||D5G2;|gnd@0||U
 EIN||D5G2;X-2;|conn@0|y|U
 EOUT||D5G2;X-2;|conn@1|y|U
 EVDD||D5G2;|pwr@0||U
+X
+
+# Cell INV_1_sim;1{sch}
+CINV_1_sim;1{sch}||schematic|1625302956962|1625303065804|
+IINV_1;1{sch}|INV_1@0||4|-2|||D5G4;
+Ngeneric:Facet-Center|art@0||0|0||||AV
+NCapacitor|cap@0||21|-1|||R||SCHEM_capacitance(D5G1;)S2.17f
 X
 
 # Cell INV_2;1{ic}
