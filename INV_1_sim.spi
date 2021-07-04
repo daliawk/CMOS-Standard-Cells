@@ -1,7 +1,7 @@
 *** SPICE deck for cell INV_1_sim{sch} from library Project1
-*** Created on Sat Jul 03, 2021 05:02:36
-*** Last revised on Sat Jul 03, 2021 06:50:18
-*** Written on Sat Jul 03, 2021 07:47:23 by Electric VLSI Design System, version 9.07
+*** Created on Sat Jul 03, 2021 02:02:36
+*** Last revised on Sun Jul 04, 2021 02:16:03
+*** Written on Sun Jul 04, 2021 02:16:09 by Electric VLSI Design System, version 9.07
 *** Layout tech: mocmos, foundry MOSIS
 *** UC SPICE *** , MIN_RESIST 4.0, MIN_CAPAC 0.1FF
 
@@ -21,11 +21,11 @@ XINV_1@0 gnd IN OUT vdd Project1__INV_1
 * Spice Code nodes in cell cell 'INV_1_sim{sch}'
 vdd VDD GND dc 1.8
 vin IN gnd (pulse 0 1.8 500ps 480ps 480ps 1000ps)
-.tran 0ns 50ns
+.tran 10ns 50ns
 .meas TRAN tpdf TRIG V(IN) val=0.9 rise=1 TARG V(OUT) val=0.9 fall=1
 .meas TRAN tpdr TRIG V(IN) val=0.9 fall=1 TARG V(OUT) val=0.9 rise=1
-.cload OUT 0 2.17fF
-.include /home/nada/Desktop/DD2_Project1/130nm_bulk.pm
+cload OUT 0 2.17fF
+.include /home/daliawk/DD2_Project1/130nm_bulk.pm
 .control
 run
 set color0=white
