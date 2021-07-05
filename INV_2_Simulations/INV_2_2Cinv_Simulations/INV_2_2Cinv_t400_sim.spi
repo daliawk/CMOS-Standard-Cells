@@ -1,0 +1,37 @@
+*** SPICE deck for cell INV_2_2Cinv_sim{sch} from library Project1
+*** Created on Sun Jul 04, 2021 19:59:27
+*** Last revised on Sun Jul 04, 2021 20:05:56
+*** Written on Sun Jul 04, 2021 20:06:00 by Electric VLSI Design System, version 9.07
+*** Layout tech: mocmos, foundry MOSIS
+*** UC SPICE *** , MIN_RESIST 4.0, MIN_CAPAC 0.1FF
+
+*** SUBCIRCUIT Project1__INV_2 FROM CELL INV_2{sch}
+.SUBCKT Project1__INV_2 gnd IN OUT vdd
+** GLOBAL gnd
+** GLOBAL vdd
+Mnmos@0 OUT IN gnd gnd nmos L=0.14U W=0.42U
+Mpmos@0 vdd IN OUT vdd pmos L=0.14U W=0.98U
+.ENDS Project1__INV_2
+
+.global gnd vdd
+
+*** TOP LEVEL CELL: INV_2_2Cinv_sim{sch}
+XINV_2@0 gnd IN OUT vdd Project1__INV_2
+XINV_2@1 gnd OUT INV_2@1_OUT vdd Project1__INV_2
+
+* Spice Code nodes in cell cell 'INV_2_2Cinv_sim{sch}'
+vdd VDD GND dc 1.8
+vin IN gnd pulse(0 1.8 1000ps 500ps 500ps 1000ps)
+.tran 10ns 50ns
+.meas TRAN tpdf TRIG V(IN) val=0.9 rise=1 TARG V(OUT) val=0.9 fall=1
+.meas TRAN tpdr TRIG V(IN) val=0.9 fall=1 TARG V(OUT) val=0.9 rise=1
+cload OUT 0 2.17fF
+.include /home/daliawk/DD2_Project1/130nm_bulk.pm
+.control
+run
+set color0=white
+set color1=black
+set xbrushwidth=2
+plot v(IN) v(OUT)
+.endc
+.END

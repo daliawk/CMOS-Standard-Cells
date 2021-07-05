@@ -1,0 +1,45 @@
+*** SPICE deck for cell INV_4_Cinv_sim{sch} from library Project1
+*** Created on Sun Jul 04, 2021 20:34:35
+*** Last revised on Sun Jul 04, 2021 20:39:04
+*** Written on Sun Jul 04, 2021 20:39:07 by Electric VLSI Design System, version 9.07
+*** Layout tech: mocmos, foundry MOSIS
+*** UC SPICE *** , MIN_RESIST 4.0, MIN_CAPAC 0.1FF
+
+*** SUBCIRCUIT Project1__INV_1 FROM CELL INV_1{sch}
+.SUBCKT Project1__INV_1 gnd IN OUT vdd
+** GLOBAL gnd
+** GLOBAL vdd
+Mnmos@0 OUT IN gnd gnd NMOS L=0.14U W=0.21U
+Mpmos@0 vdd IN OUT vdd PMOS L=0.14U W=0.49U
+.ENDS Project1__INV_1
+
+*** SUBCIRCUIT Project1__INV_4 FROM CELL INV_4{sch}
+.SUBCKT Project1__INV_4 gnd IN OUT vdd
+** GLOBAL gnd
+** GLOBAL vdd
+Mnmos@0 OUT IN gnd gnd nmos L=0.14U W=0.84U
+Mpmos@0 vdd IN OUT vdd pmos L=0.14U W=1.96U
+.ENDS Project1__INV_4
+
+.global gnd vdd
+
+*** TOP LEVEL CELL: INV_4_Cinv_sim{sch}
+XINV_1@0 gnd OUT INV_1@0_OUT vdd Project1__INV_1
+XINV_4@1 gnd IN OUT vdd Project1__INV_4
+
+* Spice Code nodes in cell cell 'INV_4_Cinv_sim{sch}'
+vdd VDD GND dc 1.8
+vin IN gnd pulse(0 1.8 1000ps 125ps 125ps 1000ps)
+.tran 10ns 50ns
+.meas TRAN tpdf TRIG V(IN) val=0.9 rise=1 TARG V(OUT) val=0.9 fall=1
+.meas TRAN tpdr TRIG V(IN) val=0.9 fall=1 TARG V(OUT) val=0.9 rise=1
+cload OUT 0 2.17fF
+.include /home/daliawk/DD2_Project1/130nm_bulk.pm
+.control
+run
+set color0=white
+set color1=black
+set xbrushwidth=2
+plot v(IN) v(OUT)
+.endc
+.END
