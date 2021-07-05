@@ -1,0 +1,47 @@
+*** SPICE deck for cell NAND_1_2Cinv_sim{sch} from library Project1
+*** Created on Mon Jul 05, 2021 01:14:23
+*** Last revised on Mon Jul 05, 2021 01:18:11
+*** Written on Mon Jul 05, 2021 01:18:23 by Electric VLSI Design System, version 9.07
+*** Layout tech: mocmos, foundry MOSIS
+*** UC SPICE *** , MIN_RESIST 4.0, MIN_CAPAC 0.1FF
+
+*** SUBCIRCUIT Project1__INV_2 FROM CELL INV_2{sch}
+.SUBCKT Project1__INV_2 gnd IN OUT vdd
+** GLOBAL gnd
+** GLOBAL vdd
+Mnmos@0 OUT IN gnd gnd nmos L=0.14U W=0.42U
+Mpmos@0 vdd IN OUT vdd pmos L=0.14U W=0.98U
+.ENDS Project1__INV_2
+
+*** SUBCIRCUIT Project1__NAND_1 FROM CELL NAND_1{sch}
+.SUBCKT Project1__NAND_1 gnd IN1 IN2 OUT vdd
+** GLOBAL gnd
+** GLOBAL vdd
+Mnmos@3 OUT IN2 net@37 gnd nmos L=0.14U W=0.42U
+Mnmos@4 net@37 IN1 gnd gnd nmos L=0.14U W=0.42U
+Mpmos@0 vdd IN2 OUT vdd pmos L=0.14U W=0.49U
+Mpmos_0 vdd IN1 OUT vdd pmos L=0.14U W=0.49U
+.ENDS Project1__NAND_1
+
+.global gnd vdd
+
+*** TOP LEVEL CELL: NAND_1_2Cinv_sim{sch}
+XINV_2@0 gnd OUT INV_2@0_OUT vdd Project1__INV_2
+XNAND_1@0 gnd IN1 IN2 OUT vdd Project1__NAND_1
+
+* Spice Code nodes in cell cell 'NAND_1_2Cinv_sim{sch}'
+vdd VDD GND dc 1.8
+vin1 IN1 gnd pulse(0 1.8 5000ps 250ps 250ps 5000ps)
+vin2 IN2 gnd pulse(0 1.8 5000ps 250ps 250ps 5000ps)
+.tran 10ns 50ns
+.meas TRAN tpdf TRIG V(IN1) val=0.9 rise=1 TARG V(OUT) val= 1.7 fall=1
+.meas TRAN tpdr TRIG V(IN1) val=0.9 fall=1 TARG V(OUT) val=1.7 rise=1
+.include /home/daliawk/DD2_Project1/130nm_bulk.pm
+.control
+run
+set color0=white
+set color1=black
+set xbrushwidth=2
+plot v(IN1) v(IN2) v(OUT)
+.endc
+.END

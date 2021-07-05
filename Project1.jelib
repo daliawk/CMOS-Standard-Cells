@@ -131,18 +131,18 @@ EVDD||D5G2;|VDD||U
 X
 
 # Cell COMPLEX_1;1{sch}
-CCOMPLEX_1;1{sch}||schematic|1625161242019|1625399790933|
+CCOMPLEX_1;1{sch}||schematic|1625161242019|1625474001486|
 Ngeneric:Facet-Center|art@0||0|0||||AV
 NOff-Page|conn@0||-14|8||||
 NOff-Page|conn@1||-14|2||||
 NOff-Page|conn@2||14|-6|||X|
 NOff-Page|conn@3||14|-2||||
 NGround|gnd@0||-2|-17||||
-NTransistor|nmos@0||-9|-6|||R||ATTR_length(D5G0.5;X-0.5;Y-1;)S2|ATTR_width(D5G1;X0.5;Y-1;)S6
-NTransistor|nmos@1||-9|-11|||R||ATTR_length(D5G0.5;X-0.5;Y-1;)S2|ATTR_width(D5G1;X0.5;Y-1;)S6
-NTransistor|nmos@2||1|-11|||R||ATTR_length(D5G0.5;X-0.5;Y-1;)S2|ATTR_width(D5G1;X0.5;Y-1;)S6
-NTransistor|nmos@3||7|-11|||XR||ATTR_length(D5G0.5;X-0.5;Y-1;)D2.0|ATTR_width(D5G1;X0.5;Y-1;)D6.0
-NTransistor|nmos@4||6|-6|||XR||ATTR_length(D5G0.5;X-0.5;Y-1;)D2.0|ATTR_width(D5G1;X0.5;Y-1;)D6.0
+NTransistor|nmos@0||-9|-6|||R||ATTR_length(D5G0.5;X-0.5;Y-1;)S2|ATTR_width(D5G1;X0.5;Y-1;)S6|SIM_spice_model(D5G1;)Snmos
+NTransistor|nmos@1||-9|-11|||R||ATTR_length(D5G0.5;X-0.5;Y-1;)S2|ATTR_width(D5G1;X0.5;Y-1;)S6|SIM_spice_model(D5G1;)Snmos
+NTransistor|nmos@2||1|-11|||R||ATTR_length(D5G0.5;X-0.5;Y-1;)S2|ATTR_width(D5G1;X0.5;Y-1;)S6|SIM_spice_model(D5G1;)Snmos
+NTransistor|nmos@3||7|-11|||XR||ATTR_length(D5G0.5;X-0.5;Y-1;)D2.0|ATTR_width(D5G1;X0.5;Y-1;)D6.0|SIM_spice_model(D5G1;)Snmos
+NTransistor|nmos@4||6|-6|||XR||ATTR_length(D5G0.5;X-0.5;Y-1;)D2.0|ATTR_width(D5G1;X0.5;Y-1;)D6.0|SIM_spice_model(D5G1;)Snmos
 NWire_Pin|pin@0||-2|11||||
 NWire_Pin|pin@1||-7|11||||
 NWire_Pin|pin@2||3|11||||
@@ -178,11 +178,11 @@ NWire_Pin|pin@44||-11|-8||||
 NWire_Pin|pin@45||0|-8||||
 NWire_Pin|pin@46||-11|-6||||
 NWire_Pin|pin@47||-20|-11||||
-NTransistor|pmos@0||-9|8|||R|2|ATTR_length(D5G0.5;X-0.5;Y-1;)S2|ATTR_width(D5G1;X0.5;Y-1;)S14
-NTransistor|pmos@1||-9|2|||R|2|ATTR_length(D5G0.5;X-0.5;Y-1;)S2|ATTR_width(D5G1;X0.5;Y-1;)S14
-NTransistor|pmos@2||0|8|||R|2|ATTR_length(D5G0.5;X-0.5;Y-1;)S2|ATTR_width(D5G1;X0.5;Y-1;)S14
-NTransistor|pmos@3||6|8|||XR|2|ATTR_length(D5G0.5;X-0.5;Y-1;)D2.0|ATTR_width(D5G1;X0.5;Y-1;)D14.0
-NTransistor|pmos@4||5|2|||XR|2|ATTR_length(D5G0.5;X-0.5;Y-1;)S2|ATTR_width(D5G1;X0.5;Y-1;)S14
+NTransistor|pmos@0||-9|8|||R|2|ATTR_length(D5G0.5;X-0.5;Y-1;)S2|ATTR_width(D5G1;X0.5;Y-1;)S14|SIM_spice_model(D5G1;)Spmos
+NTransistor|pmos@1||-9|2|||R|2|ATTR_length(D5G0.5;X-0.5;Y-1;)S2|ATTR_width(D5G1;X0.5;Y-1;)S14|SIM_spice_model(D5G1;)Spmos
+NTransistor|pmos@2||0|8|||R|2|ATTR_length(D5G0.5;X-0.5;Y-1;)S2|ATTR_width(D5G1;X0.5;Y-1;)S14|SIM_spice_model(D5G1;)Spmos
+NTransistor|pmos@3||6|8|||XR|2|ATTR_length(D5G0.5;X-0.5;Y-1;)D2.0|ATTR_width(D5G1;X0.5;Y-1;)D14.0|SIM_spice_model(D5G1;)Spmos
+NTransistor|pmos@4||5|2|||XR|2|ATTR_length(D5G0.5;X-0.5;Y-1;)S2|ATTR_width(D5G1;X0.5;Y-1;)S14|SIM_spice_model(D5G1;)Spmos
 NPower|pwr@0||-2|14||||
 Awire|net@0|||900|pmos@0|s|-7|6|pmos@1|d|-7|4
 Awire|net@3|||900|pwr@0||-2|14|pin@0||-2|11
@@ -251,6 +251,29 @@ EIN2||D5G2;|conn@0|a|U
 EIN3||D5G2;X-3;|conn@2|y|U
 EOUT||D5G2;|conn@3|a|U
 EVDD||D5G2;|pwr@0||U
+X
+
+# Cell COMPLEX_1_Cinv_Sim;1{sch}
+CCOMPLEX_1_Cinv_Sim;1{sch}||schematic|1625473855774|1625474177769|
+ICOMPLEX_1;1{sch}|COMPLEX_@0||12|0|||D5G4;
+IINV_1;1{sch}|INV_1@0||53|1|||D5G4;
+Ngeneric:Facet-Center|art@0||0|0||||AV
+NWire_Pin|pin@0||37|-2||||
+NWire_Pin|pin@1||37|2||||
+NWire_Pin|pin@2||-14|-6||||
+NWire_Pin|pin@3||-12|2||||
+NWire_Pin|pin@4||-14|8||||
+Ngeneric:Invisible-Pin|pin@5||-38|0|||||SIM_spice_card(D5G1;)S[vdd VDD GND dc 1.8,vin1 IN1 gnd pulse(0 1.8 5000ps 0ps 0ps 5000ps),vin2 IN2 gnd pulse(0 1.8 5000ps 0ps 0ps 5000ps),vin3 IN3 gnd pulse(0 0 5000ps 0ps 0ps 5000ps),.tran 10ns 50ns,.meas TRAN tpdf TRIG V(IN1) val=0.9 rise=1 TARG V(OUT) val= 0.9 fall=1,.meas TRAN tpdr TRIG V(IN1) val=0.9 fall=1 TARG V(OUT) val=0.9 rise=1,.include /home/daliawk/DD2_Project1/130nm_bulk.pm,.control,run,set color0=white,set color1=black,set xbrushwidth=2,plot v(IN1) v(IN2) v(OUT),.endc]
+Awire|net@0|||1800|COMPLEX_@0|OUT|24|-2|pin@0||37|-2
+Awire|net@1|||2700|pin@0||37|-2|pin@1||37|2
+Awire|net@2|||0|INV_1@0|IN|46|2|pin@1||37|2
+Awire|net@3|||0|COMPLEX_@0|IN3|24|-6|pin@2||-14|-6
+Awire|net@4|||0|COMPLEX_@0|IN1|-4|2|pin@3||-12|2
+Awire|net@5|||0|COMPLEX_@0|IN2|-4|8|pin@4||-14|8
+EIN1||D5G2;|pin@3||U
+EIN2||D5G2;|pin@4||U
+EIN3||D5G2;|pin@2||U
+EOUT||D5G2;|pin@1||U
 X
 
 # Cell COMPLEX_4;1{lay}
@@ -1799,6 +1822,26 @@ EOUT||D5G2;|conn@5|a|U
 EVDD||D5G2;|pwr@1||U
 X
 
+# Cell NAND_1_2Cinv_sim;1{sch}
+CNAND_1_2Cinv_sim;1{sch}||schematic|1625472863556|1625473295025|
+IINV_2;1{sch}|INV_2@0||45|-1|||D5G4;
+INAND_1;1{sch}|NAND_1@0||21|4|||D5G4;
+Ngeneric:Facet-Center|art@0||0|0||||AV
+Ngeneric:Invisible-Pin|pin@0||-26|0|||||SIM_spice_card(D5G1;)S[vdd VDD GND dc 1.8,vin1 IN1 gnd pulse(0 1.8 5000ps 500ps 500ps 5000ps),vin2 IN2 gnd pulse(0 1.8 5000ps 500ps 500ps 5000ps),.tran 10ns 50ns,.meas TRAN tpdf TRIG V(IN1) val=0.9 rise=1 TARG V(OUT) val= 0.9 fall=1,.meas TRAN tpdr TRIG V(IN1) val=0.9 fall=1 TARG V(OUT) val=0.9 rise=1,.include /home/daliawk/DD2_Project1/130nm_bulk.pm,.control,run,set color0=white,set color1=black,set xbrushwidth=2,plot v(IN1) v(IN2) v(OUT),.endc]
+NWire_Pin|pin@1||30|1||||
+NWire_Pin|pin@2||36|1||||
+NWire_Pin|pin@3||-7|6||||
+NWire_Pin|pin@4||-8|-1||||
+Awire|net@0|||1800|NAND_1@0|OUT|19|1|pin@1||30|1
+Awire|net@1|||1800|pin@1||30|1|pin@2||36|1
+Awire|net@2|||2700|INV_2@0|IN|36|0|pin@2||36|1
+Awire|net@3|||0|NAND_1@0|IN1|-1|6|pin@3||-7|6
+Awire|net@4|||0|NAND_1@0|IN2|3|-1|pin@4||-8|-1
+EIN1||D5G2;|pin@3||U
+EIN2||D5G2;|pin@4||U
+EOUT||D5G2;|pin@1||U
+X
+
 # Cell NAND_1_Cinv_sim;1{sch}
 CNAND_1_Cinv_sim;1{sch}||schematic|1625462227804|1625464977250|
 IINV_1;1{sch}|INV_1@0||25|-1|||D5G4;
@@ -2099,7 +2142,7 @@ EVDD||D5G2;|pwr@0||U
 X
 
 # Cell NOR_1_Cinv_sim;1{sch}
-CNOR_1_Cinv_sim;1{sch}||schematic|1625463041725|1625463223013|
+CNOR_1_Cinv_sim;1{sch}||schematic|1625463041725|1625473736524|
 IINV_1;1{sch}|INV_1@0||36|-2|||D5G4;
 INOR_1;2{sch}|NOR_1@0||5|-3|||D5G4;
 Ngeneric:Facet-Center|art@0||0|0||||AV
@@ -2107,7 +2150,7 @@ NWire_Pin|pin@2||18|-4||||
 NWire_Pin|pin@3||18|-1||||
 NWire_Pin|pin@4||-21|5||||
 NWire_Pin|pin@5||-19|-8||||
-Ngeneric:Invisible-Pin|pin@6||-45|1|||||SIM_spice_card(D5G1;)S[vdd VDD GND dc 1.8,vin1 IN1 gnd pulse(0 1.8 5000ps 500ps 500ps 5000ps),vin2 IN2 gnd pulse(0 1.8 5000ps 500ps 500ps 5000ps),.tran 10ns 50ns,.meas TRAN tpdf TRIG V(IN1) val=0.9 rise=1 TARG V(OUT) val=0.9 fall=1,.meas TRAN tpdr TRIG V(IN1) val=0.9 fall=1 TARG V(OUT) val=0.9 rise=1,.include /home/daliawk/DD2_Project1/130nm_bulk.pm,.control,run,set color0=white,set color1=black,set xbrushwidth=2,plot v(IN1) v(IN2) v(OUT),.endc]
+Ngeneric:Invisible-Pin|pin@6||-45|1|||||SIM_spice_card(D5G1;)S[vdd VDD GND dc 1.8,vin1 IN1 gnd pulse(0 1.8 5000ps 0ps 0ps 5000ps),vin2 IN2 gnd pulse(0 1.8 5000ps 0ps 0ps 5000ps),.tran 10ns 50ns,.meas TRAN tpdf TRIG V(IN1) val=0.9 rise=1 TARG V(OUT) val=1.7 fall=1,.meas TRAN tpdr TRIG V(IN1) val=0.9 fall=1 TARG V(OUT) val=1.7 rise=1,.include /home/daliawk/DD2_Project1/130nm_bulk.pm,.control,run,set color0=white,set color1=black,set xbrushwidth=2,plot v(IN1) v(IN2) v(OUT),.endc]
 Awire|net@3|||1800|NOR_1@0|OUT|9|-4|pin@2||18|-4
 Awire|net@4|||2700|pin@2||18|-4|pin@3||18|-1
 Awire|net@5|||0|INV_1@0|IN|29|-1|pin@3||18|-1
